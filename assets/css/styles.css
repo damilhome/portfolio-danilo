@@ -99,6 +99,10 @@ body {
     color: black;
 }
 
+.languages-options a {
+    transition: background-color 500ms, color 500ms;
+}
+
 .languages-options a:hover {
     background-color: #45567d;
     color: white;

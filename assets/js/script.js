@@ -4,7 +4,7 @@ const english = document.getElementById('english');
 const portuguese = document.getElementById('portuguese');
 const caret = document.querySelector('#page-language i:last-child');
 
-languageChooser.addEventListener('click', event => {
+languageChooser.addEventListener('mouseenter', event => {
     languageOptions.classList.toggle('disappear');
     const isClosed = languageOptions.classList.contains('disappear')
 
@@ -17,10 +17,10 @@ languageChooser.addEventListener('click', event => {
     event.stopPropagation();
 });
 
-document.addEventListener('click', () => {
+document.addEventListener('mouseover', event => {
     const isClosed = languageOptions.classList.contains('disappear');
 
-    if(!isClosed) {
+    if(!isClosed && !languageChooser.contains(event.target)) {
         languageOptions.classList.add('disappear');
         languageChooser.classList.remove('open');
     }
