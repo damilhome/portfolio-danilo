@@ -57,6 +57,7 @@ body {
     transition: background-color 500ms;
 }
 
+
 .page-language i:last-of-type {
     transition: transform 0.25s;
 }
@@ -69,16 +70,27 @@ body {
     background-color: #45567d;
 }
 
+.first-disappear {
+    transform: translateY(-100px);
+}
+
 .disappear {
-    display: none;
+    animation: going-up 0.25s ease-in forwards;
+}
+
+.appear {
+    animation: going-down .25s ease-out forwards;
 }
 
 .languages-options {
     position: absolute;
     top: 71px;
+    overflow: hidden;
+}
+
+.languages-options-menu {
     font-size: 1.2rem;
     background-color: white;
-    
 }
 
 .english-en,
@@ -99,11 +111,11 @@ body {
     color: black;
 }
 
-.languages-options a {
+.languages-options-menu a {
     transition: background-color 500ms, color 500ms;
 }
 
-.languages-options a:hover {
+.languages-options-menu a:hover {
     background-color: #45567d;
     color: white;
 }
@@ -291,6 +303,24 @@ footer {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes going-down {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes going-up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100px);
     }
 }
 
